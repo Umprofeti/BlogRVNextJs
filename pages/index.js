@@ -513,14 +513,14 @@ export default function Index({DestActualidad, DestMarlo, DestNegocios, PostActu
           <meta property='og:type' content='website'/>
           <meta property='og:url' content={`https://www.rendezvouscorp.com/`}/>
           <meta property="og:title" content={`Rendez-Vous magazine`}/>
-          <meta property='og:image' itemProp="image" content={`${ImagenIcon.src}`}/>
+          <meta property='og:image' itemProp="image" content={`https://apiblog.rendezvouscorp.com/wp-content/uploads/2021/09/Logo.png`}/>
           <meta property='og:description' content={`La Revista`}/>
 
           <meta property="twitter:card" content="summary_large_image"/>
           <meta property="twitter:url" content={`https://www.rendezvouscorp.com/`}/>
           <meta property="twitter:title" content={`Rendez-Vous magazine`}/>
           <meta property="twitter:description" content={`La Revista`}/>
-          <meta property="twitter:image" content={`${ImagenIcon.src}`}/>
+          <meta property="twitter:image" content={`https://apiblog.rendezvouscorp.com/wp-content/uploads/2021/09/Logo.png`}/>
       </Head>
       <main>
         <div className='mt-6 md:w-[75%] md:mx-auto px-3'>
