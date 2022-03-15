@@ -1,5 +1,5 @@
-## V0.1.0
+## V0.2.0
 
 Esta es una versión de prueba del blog
 
-NO es la version final del blog
+Se ha actualizado el tarifario y mejorado el header de lás páginas index y tarifario. Adicionalmente se han agregado un mejor página de error.
