@@ -2,7 +2,7 @@ import { useState } from 'react'
 import 'animate.css';
 import client from '../apollo-client';
 import { gql } from '@apollo/client';
-import { ReactComponent as Tarifario } from '../public/Tarifario-Editado.svg';
+import { ReactComponent as Tarifario } from '../public/TARIFARIO-2022.svg';
 import Beneficio1 from '../public/pag completa taf1.svg';
 import Beneficio2 from '../public/pag completa taf2.svg';
 import Beneficio3 from '../public/pag completa taf3.svg';
@@ -69,9 +69,9 @@ export default function TarifarioRV({ Sliders }) {
 
     if(typeof document !== 'undefined'){
 
-      boton1 = document.querySelector('#Tarifario-Editado_svg__boton');
-      boton2 = document.querySelector('#Tarifario-Editado_svg__boton2');
-      boton3 = document.querySelector('#Tarifario-Editado_svg__boton3');
+      boton1 = document.querySelector('#TARIFARIO-2022_svg__Tarifario-Editado_svg__boton');
+      boton2 = document.querySelector('#TARIFARIO-2022_svg__Tarifario-Editado_svg__boton2');
+      boton3 = document.querySelector('#TARIFARIO-2022_svg__Tarifario-Editado_svg__boton3');
 
     }
 
@@ -137,7 +137,7 @@ export default function TarifarioRV({ Sliders }) {
         </div>
         : null}
       <div className="mt-6">
-        {loading ? <TarifarioLoadign/> : <Tarifario className="w-[100%] h-[100%]"/>}
+        {loading ? <TarifarioLoadign/> : <Tarifario className="w-[100%]"/>}
       </div>
     </div>
   )
