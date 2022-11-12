@@ -25,7 +25,7 @@ export const ContainerArticle3 = (props) => {
           <div className='w-full max-h-[350px] laptopL:max-h-[250px] 3xl:max-h-[350px]'>
               <img
                   src={mediaItemUrl}
-                  className='mb-3 xl:rounded-r-lg mx-auto object-cover max-h-[350px]'
+                  className='mb-3 xl:rounded-r-lg mx-auto object-cover max-h-[350px] laptopL:max-h-[250px]'
                   alt={TitleImg}
               />
           </div>

@@ -73,6 +73,7 @@ export const Fomulario = () => {
             <form
                 onSubmit={(e)=> {sendForm(e)}}
                 id='form'
+                method='Post'
                 className='z-50 animate__fadeInDown animate__animated bg-white w-[90%] xl:w-[50%] xl:mt-2  mx-auto flex flex-col xl:items-center shadow-lg pt-6 px-6 md:px-12 xl:px-6 xl:pt-3 '>
                 <div className='w-full xl:w-[70%] mx-auto'>
                     <div className='flex flex-col'>
