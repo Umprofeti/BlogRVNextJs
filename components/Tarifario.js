@@ -1,4 +1,4 @@
-import { useState } from 'react'
+/* import { useState } from 'react'
 import 'animate.css';
 import client from '../apollo-client';
 import { gql } from '@apollo/client';
@@ -142,3 +142,4 @@ export default function TarifarioRV({ Sliders }) {
     </div>
   )
 }
+ */
