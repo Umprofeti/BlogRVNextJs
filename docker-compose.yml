@@ -1,0 +1,21 @@
+version: '3'
+services:
+  revista2022:
+    tty: true
+    build: .
+    image: node:18-alpine
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/home/node/app
+      - node_modules:/home/node/app/node_modules
+    working_dir: /home/node/app/
+    command: sh -c "npm install && npm run build && npm run pm2"
+    
+    networks:
+      - BlogRV
+networks:
+  BlogRV:
+
+volumes:
+  node_modules:

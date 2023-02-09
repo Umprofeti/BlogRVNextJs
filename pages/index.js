@@ -1,14 +1,32 @@
 import Head from 'next/head';
-import client from '../apollo-client';
+import client from '../apollo/apollo-client';
 import { gql } from '@apollo/client';
 import { IndexDesktop } from '../components/IndexDesktop';
 import { Slider } from '../components/Slider';
 import ImagenIcon from '../public/favicon.ico';
+import client2 from '../apollo/apolloClientTarifario';
 import { RecomendacionesRV } from '../components/RecomendacionesRV';
 import {SizeWindow} from '../helpers/getSizeWindow';
 import { IndexMovil } from '../components/IndexMovil';
 
 export async function getServerSideProps(){
+
+  const {data: dataPortadaRevista, loading: LoadingPortadaRevista} = await client2.query({
+    query: gql`query getPortadaPost {
+      RevistaContents(where: {position: {equals: 1}}  ){
+        docs{
+          id
+          imagen
+          magazineImage{
+            id
+            filename
+            url
+          }
+        }
+      }
+    }`
+  })
+
   const {data:DataDestActualidad, loading:LoadingDestActualidad} = await client.query({
     query:gql`query getDestacdaActualidad {
       tags(where: {nameLike: "actualidad-destacada"}) {
@@ -510,12 +528,16 @@ export async function getServerSideProps(){
     },
     VideoRV: {
       data: DataVideoPrincipal
+    },
+    PortadaRV:{
+      data: dataPortadaRevista,
+      loading: LoadingPortadaRevista
     }
    }
   };
 }
 
-export default function Index({DestActualidad, DestMarlo, DestNegocios, PostActualidad, PostMarlo, PostSociedad, PostNegocios, SectActu, SectMarlo, SectNego, SectSociedad, Sliders, Entretenimiento, Libros, Destinos, VideoRV }) {
+export default function Index({DestActualidad, DestMarlo, DestNegocios, PostActualidad, PostMarlo, PostSociedad, PostNegocios, SectActu, SectMarlo, SectNego, SectSociedad, Sliders, Entretenimiento, Libros, Destinos, VideoRV, PortadaRV }) {
   
   return (
     <>
@@ -541,11 +563,11 @@ export default function Index({DestActualidad, DestMarlo, DestNegocios, PostActu
           <Slider props={Sliders}/>
         </div>
 
-        { SizeWindow() > 1280 ? <IndexDesktop props={{VideoRV, DestActualidad, DestMarlo, DestNegocios, PostActualidad, PostMarlo, PostSociedad, PostNegocios, SectActu, SectMarlo, SectNego, SectSociedad}}/>
+        { SizeWindow() > 1280 ? <IndexDesktop props={{VideoRV, DestActualidad, DestMarlo, DestNegocios, PostActualidad, PostMarlo, PostSociedad, PostNegocios, SectActu, SectMarlo, SectNego, SectSociedad, PortadaRV}}/>
       
         :
         
-          <IndexMovil props={{VideoRV, DestActualidad, DestMarlo, DestNegocios, PostActualidad, PostMarlo, PostSociedad, PostNegocios, SectActu, SectMarlo, SectNego, SectSociedad, }}/>
+          <IndexMovil props={{VideoRV, DestActualidad, DestMarlo, DestNegocios, PostActualidad, PostMarlo, PostSociedad, PostNegocios, SectActu, SectMarlo, SectNego, SectSociedad, PortadaRV}}/>
         }
         <RecomendacionesRV props={{Entretenimiento, Libros, Destinos}} />
       </main>

@@ -1,4 +1,4 @@
-import client from '../../apollo-client';
+import client from '../../apollo/apollo-client';
 import { gql } from '@apollo/client';
 import Head from 'next/head';
 import { Slider } from '../../components/Slider';

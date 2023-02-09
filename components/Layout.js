@@ -74,9 +74,9 @@ const NavBar = () => {
                     <Link href={`/categories/sociedad?first=24`}>
                         <a className="w-full text-center py-5 no-underline hvr-underline-from-left">SOCIEDAD</a>
                     </Link>
-                    {/* <Link href={`/tarifario`}>
+                    <Link href={`/tarifario`}>
                         <a className="w-full text-center py-5 no-underline hvr-underline-from-left">TARIFARIO</a>
-                    </Link> */}
+                    </Link>
                 </div>
           </div>
           <div className='block xl:hidden'>
@@ -95,7 +95,7 @@ const NavBar = () => {
                 <img 
                     src={RVLOGO.src}
                     alt='Rendez-Vous Magazine'
-                    className='w-[25%] mx-auto md:w-[10%]'
+                    className='w-[15%] mx-auto md:w-[10%]'
                 />
               </Link>
             </div>
@@ -115,9 +115,9 @@ const NavBar = () => {
               <Link href={`/categories/sociedad?first=24`}>
                 <a className='w-full text-center font-Volkhov pb-3 no-underline animate__animated animate__fadeInLeft hvr-underline-from-left mt-3 mb-2'>SOCIEDAD</a>
               </Link>
-              {/* <Link href={`/tarifario`}>
+              <Link href={`/tarifario`}>
                 <a className='w-full text-center font-Volkhov pb-3 no-underline animate__animated animate__fadeInLeft hvr-underline-from-left mt-3 mb-2'>TARIFARIO</a>
-              </Link> */}
+              </Link>
             </div>
           </div>
         </div>

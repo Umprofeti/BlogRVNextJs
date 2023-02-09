@@ -20,18 +20,19 @@ const DesktSect = (props) => {
     const {data: DataDestNegocios} =  props.props.DestNegocios;
     const {data: DataSectNego} = props.props.SectNego;
     const {data: DataSectSociedad} = props.props.SectSociedad;
+    const {data: dataPortada} = props.props.PortadaRV
     return(
         <div className='flex flex-col px-9 mt-9' key='desktop-section-posts'>
             <Sections props= {{dataDesct:DataDestActu, dataSect: DataSectActu, Category:Category.ACTUALIDAD}}/>
             <Sections props= {{dataDesct:DataDesctMarlo, dataSect:DataSectMarlo, Category:Category.MARLOPORTS}}/>
             <Sections props= {{dataDesct:DataDestNegocios, dataSect:DataSectNego, Category:Category.NEGOCIOS}}/>
-            <Sociedad props= {DataSectSociedad}/>
+            <Sociedad props= {{DataSectSociedad, dataPortada}}/>
         </div>
     );
 }
 
 export const IndexDesktop = (props) => {
-    const {PostMarlo, PostNegocios,PostSociedad, PostActualidad, DestActualidad, SectActu, DestMarlo,SectMarlo, SectNego, DestNegocios, SectSociedad, VideoRV } = props.props;
+    const {PostMarlo, PostNegocios,PostSociedad, PostActualidad, DestActualidad, SectActu, DestMarlo,SectMarlo, SectNego, DestNegocios, SectSociedad, VideoRV, PortadaRV } = props.props;
     const {data:DataMarlo, loading:LoadingMarlo} = PostMarlo;
     const {data: DataNegocios, loading:LoadingNegocios} =  PostNegocios;
     const {data: DataSociedad, loading: LoadingSociedad} = PostSociedad;
@@ -59,7 +60,7 @@ export const IndexDesktop = (props) => {
                     </div>
                 </div>
             </div>
-            <DesktSect props={{DestActualidad, SectActu, DestMarlo, SectMarlo, SectNego, DestNegocios, SectSociedad}}/>
+            <DesktSect props={{DestActualidad, SectActu, DestMarlo, SectMarlo, SectNego, DestNegocios, SectSociedad, PortadaRV}}/>
         </>
     );
 

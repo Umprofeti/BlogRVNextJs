@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import client from "../../apollo-client";
+import client from "../../apollo/apollo-client";
 import { useRouter } from "next/router";
 import Link from 'next/link';
 import { ConatinerArticle4 } from "../../components/ContainerArticle/ContainerArticle4";
